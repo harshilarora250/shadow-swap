@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dj5dipkitkla0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shvju"]
+
+[node name="Node2D" type="Node2D" unique_id=2133884082]
+position = Vector2(535, 326)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1523863897]
+position = Vector2(-219, 46)
+sprite_frames = SubResource("SpriteFrames_shvju")

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Shadow Swap - Game"
+run/main_scene="uid://sj06c6ucp0uk"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
