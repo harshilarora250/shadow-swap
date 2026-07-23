@@ -1,19 +1,45 @@
 [gd_scene format=3 uid="uid://dj5dipkitkla0"]
 
 [ext_resource type="Texture2D" uid="uid://dfaomx3phmddr" path="res://light-shadow.png" id="1_kyxg0"]
+[ext_resource type="Script" uid="uid://ykh2qwn3k8vw" path="res://Movement.gd" id="1_mc20k"]
 [ext_resource type="Texture2D" uid="uid://dqscssi2nxo1m" path="res://light-floor.png" id="2_mc20k"]
 
-[node name="Node2D" type="Node2D" unique_id=2133884082]
-position = Vector2(382, 362)
+[node name="Node2D" type="Node2D" unique_id=1661667589]
+script = ExtResource("1_mc20k")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=611520823]
-position = Vector2(-329, -99)
-scale = Vector2(0.07074831, 0.20711297)
+[node name="Floor" type="StaticBody2D" parent="." unique_id=464515058]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1713126391]
+position = Vector2(573, 517)
+scale = Vector2(0.596875, 0.24444444)
+texture = ExtResource("2_mc20k")
+
+[node name="MoveRight" type="Button" parent="." unique_id=929523578]
+offset_left = 929.0
+offset_top = 152.0
+offset_right = 1013.0
+offset_bottom = 224.0
+text = "Right"
+
+[node name="MoveLeft" type="Button" parent="." unique_id=58479909]
+offset_left = 792.0
+offset_top = 150.0
+offset_right = 876.0
+offset_bottom = 222.0
+text = "Left"
+
+[node name="Jump" type="Button" parent="." unique_id=1828002947]
+offset_left = 857.0
+offset_top = 44.0
+offset_right = 941.0
+offset_bottom = 116.0
+text = "Jump"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=473182154]
+position = Vector2(60.875008, 300)
+scale = Vector2(0.081802726, 0.17991634)
 texture = ExtResource("1_kyxg0")
 
-[node name="Floor" type="StaticBody2D" parent="." unique_id=1090271972]
-
-[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1749904171]
-position = Vector2(194.00002, 142.25)
-scale = Vector2(0.59999996, 0.2634259)
-texture = ExtResource("2_mc20k")
+[connection signal="pressed" from="MoveRight" to="." method="_on_move_right_pressed"]
+[connection signal="pressed" from="MoveLeft" to="." method="_on_move_left_pressed"]
+[connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sj06c6ucp0uk"]
 
 [ext_resource type="Script" uid="uid://b8cp2ejok75k6" path="res://level1.gd" id="1_u8e46"]
+[ext_resource type="Script" uid="uid://e4vcsila0612" path="res://Level2.gd" id="2_8vea8"]
 
 [node name="Control" type="Control" unique_id=525933216]
 layout_mode = 3
@@ -17,7 +18,19 @@ offset_left = 3.0
 offset_top = 475.0
 offset_right = 1153.0
 offset_bottom = 652.0
+theme_override_font_sizes/font_size = 50
 text = "Level 1"
 script = ExtResource("1_u8e46")
 
+[node name="Button2" type="Button" parent="." unique_id=1718896110]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 284.0
+offset_right = 1151.0
+offset_bottom = 475.0
+theme_override_font_sizes/font_size = 50
+text = "Level 2"
+script = ExtResource("2_8vea8")
+
 [connection signal="pressed" from="Button" to="Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
