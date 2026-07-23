@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://dj5dipkitkla0"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_shvju"]
+[ext_resource type="Texture2D" uid="uid://dfaomx3phmddr" path="res://light-shadow.png" id="1_kyxg0"]
+[ext_resource type="Texture2D" uid="uid://dqscssi2nxo1m" path="res://light-floor.png" id="2_mc20k"]
 
 [node name="Node2D" type="Node2D" unique_id=2133884082]
-position = Vector2(535, 326)
+position = Vector2(382, 362)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1523863897]
-position = Vector2(-219, 46)
-sprite_frames = SubResource("SpriteFrames_shvju")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=611520823]
+position = Vector2(-329, -99)
+scale = Vector2(0.07074831, 0.20711297)
+texture = ExtResource("1_kyxg0")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1090271972]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1749904171]
+position = Vector2(194.00002, 142.25)
+scale = Vector2(0.59999996, 0.2634259)
+texture = ExtResource("2_mc20k")
