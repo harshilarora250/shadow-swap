@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfaomx3phmddr" path="res://light-shadow.png" id="1_kyxg0"]
 [ext_resource type="Script" uid="uid://ykh2qwn3k8vw" path="res://Movement.gd" id="1_mc20k"]
 [ext_resource type="Texture2D" uid="uid://dqscssi2nxo1m" path="res://light-floor.png" id="2_mc20k"]
+[ext_resource type="Script" uid="uid://csd5krvw7a5tx" path="res://idk.gd" id="4_dn5ey"]
 [ext_resource type="Texture2D" uid="uid://wey4jmxuht32" path="res://spike-design-nobg.png" id="4_dwyiq"]
 
 [node name="Node2D" type="Node2D" unique_id=1661667589]
@@ -16,10 +17,10 @@ scale = Vector2(0.596875, 0.24444444)
 texture = ExtResource("2_mc20k")
 
 [node name="MoveRight" type="Button" parent="." unique_id=929523578]
-offset_left = 1022.0
-offset_top = 119.0
-offset_right = 1106.0
-offset_bottom = 191.0
+offset_left = 997.0
+offset_top = 117.0
+offset_right = 1081.0
+offset_bottom = 189.0
 text = "Right"
 
 [node name="MoveLeft" type="Button" parent="." unique_id=58479909]
@@ -30,25 +31,39 @@ offset_bottom = 189.0
 text = "Left"
 
 [node name="Jump" type="Button" parent="." unique_id=1828002947]
-offset_left = 950.0
-offset_top = 11.0
-offset_right = 1034.0
-offset_bottom = 83.0
+offset_left = 939.0
+offset_top = 36.0
+offset_right = 1023.0
+offset_bottom = 108.0
 text = "Jump"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=473182154]
-position = Vector2(60.875008, 300)
-scale = Vector2(0.081802726, 0.17991634)
+[node name="Spike" type="StaticBody2D" parent="." unique_id=1166773025]
+position = Vector2(-5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=1112203739]
+position = Vector2(310.00003, 355.99997)
+scale = Vector2(0.17668778, 0.18130165)
+texture = ExtResource("4_dwyiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike" unique_id=627110266]
+
+[node name="Area2D" type="Area2D" parent="Spike" unique_id=1690647364]
+position = Vector2(308, 369)
+script = ExtResource("4_dn5ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/Area2D" unique_id=2122428450]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056235712]
+position = Vector2(36, 314)
+scale = Vector2(0.043197326, 0.14644352)
 texture = ExtResource("1_kyxg0")
 
-[node name="Spikes" type="StaticBody2D" parent="." unique_id=396946848]
-position = Vector2(143, 95)
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1999305006]
+position = Vector2(-115.74805, 13.6571045)
 
-[node name="Sprite2D" type="Sprite2D" parent="Spikes" unique_id=181603337]
-position = Vector2(188.00002, 272.75)
-scale = Vector2(0.12236282, 0.14772728)
-texture = ExtResource("4_dwyiq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=696103712]
 
 [connection signal="pressed" from="MoveRight" to="." method="_on_move_right_pressed"]
 [connection signal="pressed" from="MoveLeft" to="." method="_on_move_left_pressed"]
 [connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
