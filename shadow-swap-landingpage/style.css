@@ -1,0 +1,24 @@
+body {
+    /* Set the image path */
+    background-image: url('background.png'); 
+    
+    /* Stop the image from repeating like a grid */
+    background-repeat: no-repeat; 
+    
+    /* Scale the image to completely fill the screen */
+    background-size: cover; 
+    
+    /* Keep the image perfectly centered */
+    background-position: center; 
+    
+    /* Optional: Keeps the background locked in place while scrolling */
+    background-attachment: fixed; 
+    
+    /* Fallback color if the image fails to load */
+    background-color: #333333; 
+}
+
+p {
+    text-align: center;
+    color: white;
+}
