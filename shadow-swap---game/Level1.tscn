@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://csd5krvw7a5tx" path="res://idk.gd" id="4_dn5ey"]
 [ext_resource type="Texture2D" uid="uid://wey4jmxuht32" path="res://spike-design-nobg.png" id="4_dwyiq"]
 [ext_resource type="Texture2D" uid="uid://msqdifexsev2" path="res://end.png" id="6_lmyl5"]
+[ext_resource type="Script" uid="uid://c1vq8swwlwlg3" path="res://hopefully.gd" id="6_mlbie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmyl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shvju"]
 
 [node name="Node2D" type="Node2D" unique_id=1661667589]
 script = ExtResource("1_mc20k")
@@ -57,6 +62,10 @@ script = ExtResource("4_dn5ey")
 [node name="TheEnd" type="StaticBody2D" parent="." unique_id=615157487]
 position = Vector2(170, 45)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TheEnd" unique_id=1515846740]
+position = Vector2(919, 294)
+shape = SubResource("RectangleShape2D_lmyl5")
+
 [node name="Sprite2D" type="Sprite2D" parent="TheEnd" unique_id=1537782740]
 position = Vector2(938, 289.00003)
 scale = Vector2(0.14597313, 0.21308734)
@@ -64,24 +73,25 @@ texture = ExtResource("6_lmyl5")
 
 [node name="Area2D" type="Area2D" parent="TheEnd" unique_id=1584765522]
 position = Vector2(253.625, 154.625)
+script = ExtResource("6_mlbie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheEnd/Area2D" unique_id=1878236555]
+position = Vector2(684.375, 134.375)
+shape = SubResource("RectangleShape2D_lmyl5")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="TheEnd" unique_id=1803740143]
-position = Vector2(-134, 269)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1803740143]
+position = Vector2(36, 314)
 scale = Vector2(0.043197326, 0.14644352)
 
-[node name="Sprite2D" type="Sprite2D" parent="TheEnd/CharacterBody2D" unique_id=2056235712]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2056235712]
 texture = ExtResource("1_kyxg0")
 
-[node name="Area2D" type="Area2D" parent="TheEnd/CharacterBody2D/Sprite2D" unique_id=1999305006]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=696103712]
 position = Vector2(-115.74805, 13.657227)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TheEnd/CharacterBody2D/Sprite2D/Area2D" unique_id=696103712]
+shape = SubResource("RectangleShape2D_shvju")
 
 [connection signal="pressed" from="MoveRight" to="." method="_on_move_right_pressed"]
 [connection signal="pressed" from="MoveLeft" to="." method="_on_move_left_pressed"]
 [connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]
-[connection signal="area_entered" from="TheEnd/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="TheEnd/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="child_entered_tree" from="TheEnd/Area2D" to="." method="_on_area_2d_child_entered_tree"]
-[connection signal="area_entered" from="TheEnd/CharacterBody2D/Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

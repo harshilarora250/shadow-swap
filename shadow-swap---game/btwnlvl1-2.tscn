@@ -12,12 +12,21 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="." unique_id=1898943751]
 layout_mode = 0
-offset_top = 106.0
+offset_top = 282.0
 offset_right = 1147.0
-offset_bottom = 539.0
+offset_bottom = 715.0
 theme_override_font_sizes/font_size = 100
 text = "Shadow Swap!
 (to lvl2)"
 script = ExtResource("1_epbjq")
+
+[node name="Label" type="Label" parent="." unique_id=1379709567]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1144.0
+offset_bottom = 262.0
+text = "I'm gonna tell you something that may hurt your feelings. Also, yes, the game is a scam. Just know.
+I am not at fault if something happens"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
