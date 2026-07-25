@@ -24,6 +24,7 @@ cd shadow-swap
 cd shadow-swap--game
 #you can now open this folder within godot to access the game, and make changes of your own
 ```
+<img align="right" width="150" src="assets/thumbsupmeme.jpeg">
 
 ## AI Usage
 AI was mainly used for bug fixes, wherever else I tried to use AI, it sucked.
