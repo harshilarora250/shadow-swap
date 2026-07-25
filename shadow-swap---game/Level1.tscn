@@ -13,21 +13,21 @@ script = ExtResource("1_mc20k")
 [node name="Floor" type="StaticBody2D" parent="." unique_id=464515058]
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1713126391]
-position = Vector2(573, 517)
-scale = Vector2(0.596875, 0.24444444)
+position = Vector2(654.5, 517)
+scale = Vector2(0.8640625, 0.24444444)
 texture = ExtResource("2_mc20k")
 
 [node name="MoveRight" type="Button" parent="." unique_id=929523578]
-offset_left = 997.0
-offset_top = 117.0
-offset_right = 1081.0
-offset_bottom = 189.0
+offset_left = 987.0
+offset_top = 116.0
+offset_right = 1071.0
+offset_bottom = 188.0
 text = "Right"
 
 [node name="MoveLeft" type="Button" parent="." unique_id=58479909]
-offset_left = 885.0
+offset_left = 893.0
 offset_top = 117.0
-offset_right = 969.0
+offset_right = 977.0
 offset_bottom = 189.0
 text = "Left"
 
@@ -54,31 +54,34 @@ script = ExtResource("4_dn5ey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/Area2D" unique_id=2122428450]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056235712]
-position = Vector2(36, 314)
-scale = Vector2(0.043197326, 0.14644352)
-texture = ExtResource("1_kyxg0")
-
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1999305006]
-position = Vector2(-115.74805, 13.6571045)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=696103712]
-
 [node name="TheEnd" type="StaticBody2D" parent="." unique_id=615157487]
-position = Vector2(-5, 5)
+position = Vector2(170, 45)
 
 [node name="Sprite2D" type="Sprite2D" parent="TheEnd" unique_id=1537782740]
-position = Vector2(1114.625, 334.625)
+position = Vector2(938, 289.00003)
 scale = Vector2(0.14597313, 0.21308734)
 texture = ExtResource("6_lmyl5")
 
 [node name="Area2D" type="Area2D" parent="TheEnd" unique_id=1584765522]
+position = Vector2(253.625, 154.625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheEnd/Area2D" unique_id=1878236555]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="TheEnd" unique_id=1803740143]
+position = Vector2(-134, 269)
+scale = Vector2(0.043197326, 0.14644352)
+
+[node name="Sprite2D" type="Sprite2D" parent="TheEnd/CharacterBody2D" unique_id=2056235712]
+texture = ExtResource("1_kyxg0")
+
+[node name="Area2D" type="Area2D" parent="TheEnd/CharacterBody2D/Sprite2D" unique_id=1999305006]
+position = Vector2(-115.74805, 13.657227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheEnd/CharacterBody2D/Sprite2D/Area2D" unique_id=696103712]
 
 [connection signal="pressed" from="MoveRight" to="." method="_on_move_right_pressed"]
 [connection signal="pressed" from="MoveLeft" to="." method="_on_move_left_pressed"]
 [connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]
-[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="TheEnd/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="child_entered_tree" from="TheEnd/Area2D" to="." method="_on_area_2d_child_entered_tree"]
+[connection signal="area_entered" from="TheEnd/CharacterBody2D/Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,3 +1,25 @@
 [gd_scene format=3 uid="uid://bisgyovphtm36"]
 
-[node name="Node2D" type="Node2D" unique_id=111815448]
+[ext_resource type="FontFile" uid="uid://bv4iov5kscxso" path="res://Cochin.ttc" id="1_8mrap"]
+
+[node name="Control" type="Control" unique_id=583378939]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=339232864]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 651.0
+theme_override_fonts/font = ExtResource("1_8mrap")
+theme_override_font_sizes/font_size = 100
+text = "Thank's for playing buddy!
+yes it's true. You might
+have spent infinite
+money on 1 level. I'm
+evil"
+horizontal_alignment = 1
+vertical_alignment = 1

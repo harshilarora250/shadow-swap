@@ -10,23 +10,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-@onready var sprite = $Sprite2D
+@onready var sprite = $TheEnd/CharacterBody2D/Sprite2D
 
 func _on_move_right_pressed() -> void:
-	sprite.position.x +=20
+	sprite.position.x +=200
 
 
 func _on_move_left_pressed() -> void:
-	sprite.position.x -= 20
+	sprite.position.x -= 200
 
 
 func _on_jump_pressed() -> void:
-	sprite.position.y -= 100
+	sprite.position.y -= 400
 	await get_tree().create_timer(1.4).timeout
-	sprite.position.y += 100
+	sprite.position.y += 400
 
-
-
-func _on_area_2d_child_entered_tree(node: Node) -> void:
-	if _on_area_2d_child_entered_tree(node: Node):
-		get_tree()
+func _on_area_2d_child_entered_tree(node: CharacterBody2D) -> void:
+	print("Touch Detected.")
+	get_tree().change_scene_to_file("res://btwnlvl1-2.tscn")

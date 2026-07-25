@@ -1,4 +1,7 @@
 # Shadow Swap
+You play, and find out 😉
+
+![Cover Image](assets/coverimage.png)
 
 ## Where can I play?
 You can either directly visit the [itch.io](elipseday.itch.io/shadowswap) listing, or visit the [landing page](https://shadowswapper.vercel.app)
