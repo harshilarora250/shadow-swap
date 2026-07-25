@@ -13,6 +13,7 @@ This game was developed in Godot
 ```
 Download Godot
 ```
+![Sounds good](assets/thumbsupmeme.jpeg)
 
 ## Forking
 ```
