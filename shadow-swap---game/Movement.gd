@@ -25,6 +25,8 @@ func _on_jump_pressed() -> void:
 	await get_tree().create_timer(1.4).timeout
 	sprite.position.y += 100
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("Hit!")
-	get_tree().reload_current_scene()
+
+
+func _on_area_2d_child_entered_tree(node: Node) -> void:
+	if _on_area_2d_child_entered_tree(node: Node):
+		get_tree()
