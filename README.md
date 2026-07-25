@@ -1,3 +1,4 @@
+![HC](assets/hc.png)
 # Shadow Swap
 You play, and find out 😉
 
