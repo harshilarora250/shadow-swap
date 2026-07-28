@@ -27,7 +27,10 @@ cd shadow-swap--game
 <img align="right" width="150" src="assets/thumbsupmeme.jpeg">
 
 ## AI Usage
-AI was mainly used for bug fixes, wherever else I tried to use AI, it sucked.
+AI was mainly used for bug fixes, wherever else I tried to use AI, it sucked mostly.
+
+## Recording (HackClub)
+I used lookout/lapse because my hackatime doesn't work well on my computer for some reason.
 
 ## Contribution
 This project was developed by [Harshil Arora](https://elipseday-nine.vercel.app/#contact)
