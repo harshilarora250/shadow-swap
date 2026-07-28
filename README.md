@@ -1,7 +1,7 @@
 <img align="right" width="150" src="assets/hc.png">
 
 # Shadow Swap
-You play, and find out 😉
+Shadow Swap is a basic parody game I made to learn the super basics of Godot. It does essentially nothing and ends in 5 seconds (on purpose). Just to test if the movement works, just move quicly.
 
 ![Cover Image](assets/coverimage.png)
 
